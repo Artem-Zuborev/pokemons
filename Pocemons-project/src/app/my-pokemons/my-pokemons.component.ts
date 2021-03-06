@@ -43,7 +43,9 @@ export class MyPokemonsComponent implements OnInit {
             .subscribe(item => {
               this.newItem = item;
               this.myPokemons = JSON.parse(localStorage.getItem('myPokemons'));
-              console.log(this.myPokemons);
+              if (this.myPokemons === null){
+                return;
+              }
               // tslint:disable-next-line:prefer-for-of
               for (let i = 0; i < this.myPokemons.length; i++) {
                 if (this.newItem.name === this.myPokemons[i]) {

@@ -38,7 +38,6 @@ export class PokemonInfoComponent implements OnInit, OnDestroy {
       .subscribe((response: any) => {
         this.pokemonsDetail = response;
         this.pokemonsDetail.results.forEach(result => {
-          console.log(result);
           this.http.get(result.url)
             .subscribe(item => {
               this.newItem = item;

@@ -64,13 +64,10 @@ export class GameComponent implements OnInit {
 
   ngOnInit(): void {
     this.showTime();
-    console.log(this.time);
-    console.log(this.time.nativeElement.outerText);
   }
 
   public start(): any {
     this.count++;
-    console.log(this.count);
     this.randomOne = Math.floor(Math.random() * 9); // От 0 до 9
     this.randomTwo = Math.floor(Math.random() * 9); // От 0 до 9
     this.randomThree = Math.floor(Math.random() * 9); // От 0 до 9
@@ -91,17 +88,11 @@ export class GameComponent implements OnInit {
     this.resultOne = this.cardItemOne.toArray()[this.randomOne].nativeElement.innerText;
     this.resultTwo = this.cardItemTwo.toArray()[this.randomTwo].nativeElement.innerText;
     this.resultThree = this.cardItemThree.toArray()[this.randomThree].nativeElement.innerText;
-    console.log({
-      one: this.resultOne,
-      two: this.resultTwo,
-      three: this.resultThree
-    });
     this.result1 = Number(String(this.resultOne) + String(this.resultTwo) + String(this.resultThree));
     setTimeout(() => {
       this.subscription = this.pokemonService.getApi(648)
         .subscribe((response: any) => {
           this.pokemonsDetail = response;
-          console.log(this.pokemonsDetail);
           const result = this.pokemonsDetail.results[this.result1];
           if (result === undefined) {
             this.notPoke = 'Lucky next time!';
@@ -143,7 +134,7 @@ export class GameComponent implements OnInit {
       const minutes = new Date().getMinutes();
       const hours = new Date().getHours();
       const seconds = new Date().getSeconds();
-      this.disabled = !(hours === 10 && minutes === 0 || hours === 23 && minutes === 24);
+      this.disabled = !(hours === 10 && minutes === 0 || hours === 20 && minutes === 0);
       if (this.count === 3) {
         this.disabled = true;
       }
