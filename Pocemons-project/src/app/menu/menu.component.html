@@ -1,0 +1,27 @@
+<button class="hamburger hamburger--emphatic"
+        aria-controls="navigation"
+        tabindex="0"
+        type="button" (click)="active=!active"
+        [ngClass]="active ? 'is-active' : ''">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+</button>
+<nav class="hamburger-menu-box" [ngClass]="{'show':active}">
+  <ul class="hamburger-menu">
+    <li class="hamburger-menu__item " [ngClass]="{'show-item-1':active}" [routerLink]="['/game']">Game</li>
+    <li class="hamburger-menu__item " [ngClass]="{'show-item-2':active}" [routerLink]="['/about-pokemons']"> About
+      pokemons
+    </li>
+    <li class="hamburger-menu__item " [ngClass]="{'show-item-3':active}" [routerLink]="['/pokemons-list']">Pokemons
+      gallery
+    </li>
+    <li class="hamburger-menu__item " [ngClass]="{'show-item-4':active}" [routerLink]="['/my-pokemons']">My pokemons
+    </li>
+    <li class="hamburger-menu__item " [ngClass]="{'show-item-5':active}">Forms</li>
+    <li class="hamburger-menu__item-pika " [ngClass]="{'show-item-5':active}">
+      <img src="../../assets/pica.gif" alt="" [ngClass]="{'show-item-6':active}">
+    </li>
+  </ul>
+  <app-social-bar></app-social-bar>
+</nav>

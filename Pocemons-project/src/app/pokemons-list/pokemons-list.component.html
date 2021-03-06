@@ -1,0 +1,27 @@
+<div class="search">
+  <h4><label for="search-box">Pokemon Search</label></h4>
+  <input class="search-box" id="search-box" autocomplete="off" [(ngModel)]="name">
+</div>
+<div class="pokemon-grid" *ngIf="!loading; else loadingBlock">
+  <div
+    class="box"
+    *ngFor="let pokemon of pokemons| paginate:{itemsPerPage:12, currentPage: page, totalItems: totalPokemons}|filter: name"
+    [routerLink]="['/pokemon-info',pokemon.id]">
+    <img class="box__img-pokemon" [src]="pokemon.sprites.other.dream_world.front_default" alt="">
+    <h3>{{pokemon.name | uppercase}}</h3>
+  </div>
+  <div class="box__pagination">
+    <pagination-controls (pageChange)="page = $event; pokemons=[]; getPokemons()"></pagination-controls>
+  </div>
+
+</div>
+<ng-template #loadingBlock>
+  <div class="loading-block">
+    <p class="loading-block__title">Loading...</p>
+    <img class="loading-block__picture" src="../../assets/4m3s.gif" alt="">
+  </div>
+</ng-template>
+
+
+
+

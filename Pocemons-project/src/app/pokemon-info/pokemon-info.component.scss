@@ -1,0 +1,29 @@
+.pokemon-info{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__image{
+    height: 400px;
+    width: 400px;
+    margin-right: 300px;
+  }
+  &__right-block{
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background: rgba(187, 222, 214, 0.3);
+  }
+  &__description{
+    width: 250px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

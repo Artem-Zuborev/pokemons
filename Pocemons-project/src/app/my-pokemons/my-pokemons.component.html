@@ -1,0 +1,11 @@
+<div class="container">
+  <ngb-carousel *ngIf="arrayOfPokemons">
+    <ng-template ngbSlide *ngFor="let pok of arrayOfPokemons; let i = index">
+      <div class="picsum-img-wrapper">
+        <img [src]="pok.photo" alt="">
+        <p>{{pok.name}}</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+

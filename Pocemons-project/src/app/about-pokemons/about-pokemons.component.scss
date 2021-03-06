@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Turret+Road&display=swap');
+.main{
+  font-family: 'Turret Road', cursive;
+  .title{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    color:#eec60a ;
+  }
+  .content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 2px solid burlywood;
+    padding: 30px;
+    .text{
+      width:60%;
+      font-size: 20px;
+      color: #eec60a;
+      text-align: center;
+    }
+    .img{
+      width: 400px;
+      height: 600px;
+      background-image: url('../../assets/klipartz.png');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  .image{
+    width: 600px;
+    height: 800px;
+    background-image: url('../../assets/klipartz1.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .picture{
+    width: 600px;
+    height: 800px;
+    background-image: url('../../assets/klipartz.com\ \(2\).png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+

@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+button:focus {
+  outline: none;
+}
+
+.container {
+  width: 600px;
+  height: 700px;
+  position: relative;
+  background: rgba(187, 222, 214, 0.3);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.container, .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.start {
+  position: absolute;
+  top: calc(70% + 100px);
+  left: 50%;
+  background: #51D05E;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 35px;
+  border: 2px solid #4CBD58;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  user-select: none;
+  cursor: pointer;
+  filter: drop-shadow(2px 2px 2px rgba(89, 217, 102, 0.2));
+}
+
+.start:hover {
+  background: #4CBD58;
+}
+
+.shadow {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  border: 2px solid #F3F9A7;
+  width: 400px;
+  height: 100px;
+  box-shadow: inset 0px 0px 20px 0px #6A9113;
+}
+
+.shadow__position {
+  top: 70%;
+}
+
+.shadow__position-1 {
+  top: 50%;
+}
+
+.shadow__position-2 {
+  top: 30%;
+}
+
+.random {
+  position: absolute;
+  overflow: hidden;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  width: 400px;
+  height: 100px;
+  background: #161D31;
+}
+
+.random__position {
+  top: 70%;
+}
+
+.random__position-1 {
+  top: 50%;
+}
+
+.random__position-2 {
+  top: 30%;
+}
+
+.cards {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2000px;
+  height: 100%;
+  transition: 5s ease;
+}
+
+.cards-1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2000px;
+  height: 100%;
+  transition: 5s ease;
+}
+
+.cards-2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2000px;
+  height: 100%;
+  transition: 5s ease;
+}
+
+.cards__item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 100px;
+  height: 90px;
+  color: #6A6A6A;
+  background: #EDE574; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E1F5C4, #EDE574); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E1F5C4, #EDE574); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 10px;
+}
+
+.result {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-top: 20px solid #425DD8;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+}
+
+.pokemon-info {
+  width: 600px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(187, 222, 214, 0.3);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  &__text {
+    font-family: 'Indie Flower', cursive;
+    font-size: 50px;
+    font-weight: bold;
+  }
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 250px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  font-size: 25px;
+  color: #F3F9A7;
+}
+
+.rules-game {
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: bold;
+  color: snow;
+  transition: .3s;
+
+  &:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    padding: 4px;
+    border: 1px solid darkred;
+    border-radius: 50%;
+    background: #FF0099; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #493240, #FF0099); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #493240, #FF0099); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+}
+
+.rules-info {
+  visibility: hidden;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(40px);
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 50px;
+    color: snow;
+
+  }
+}
+
+.open {
+  visibility: visible;
+}
+

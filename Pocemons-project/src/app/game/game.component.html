@@ -1,0 +1,50 @@
+<div class="main-container">
+  <div class="container">
+    <div class="shadow shadow__position"></div>
+    <div class="random random__position">
+      <div class="result"></div>
+      <div #cardsFirst class="cards">
+        <div #cardItemOne class="cards__item"
+             *ngFor="let card of cardsOne">
+          {{card}}</div>
+      </div>
+    </div>
+    <div class="shadow shadow__position-1"></div>
+    <div class="random random__position-1">
+      <div class="result"></div>
+      <div #cardsSecond class="cards-1">
+        <div #cardItemTwo class="cards__item"
+             *ngFor="let card of cardsTwo">
+          {{card}}</div>
+      </div>
+    </div>
+
+    <div class="shadow shadow__position-2"></div>
+    <div class="random random__position-2">
+      <div class="result"></div>
+      <div #cardsThird class="cards-2">
+        <div #cardItemThree class="cards__item"
+             *ngFor="let card of cardsThree">
+          {{card}}</div>
+      </div>
+    </div>
+    <button class="start" [disabled]="disabled" (click)="start()">START</button>
+  </div>
+  <div #time class="time">{{todayTime | date:'HH:mm:ss'}}</div>
+  <div class="pokemon-info">
+    <div class="pokemon-info__poke" (click)="add()">
+      <img class="pokemon-info__img" [src]="imgPok" alt="">
+      <div class="pokemon-info__name">{{namePok | uppercase}}</div>
+    </div>
+    <div class="pokemon-info__text">{{notPoke}}</div>
+  </div>
+</div>
+<i class="fas fa-question rules-game" (click)="active = !active"></i>
+<div class="rules-info" [class.open]="active">
+  <h2>Roulette game</h2>
+  <p>You can play twice a day (10:00 and 20:00). You can spin the tape measure three times.</p>
+  <p>If you are lucky and you got a pokemon, then click on it to take it to your collection</p>
+  <p>Keep track of the time and don't miss your game</p>
+  <i class="far fa-times-circle rules-info__close" [@rotate]="rotateState" (mouseenter)="animateRotate()"
+     (mouseleave)="animateRotateStop()" (click)="active = !active"></i>
+</div>

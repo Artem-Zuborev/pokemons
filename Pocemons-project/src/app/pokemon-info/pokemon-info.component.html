@@ -1,0 +1,13 @@
+<div *ngIf='pokemon' class="pokemon-info">
+  <div class="pokemon-info__picture"><img class="pokemon-info__image" [src]='pokemon.photo' alt=""></div>
+  <div class="pokemon-info__right-block">
+    <div class="pokemon-info__description">
+      <div class="id">id #{{pokemon.id}}</div>
+      <div class="name">Name: {{pokemon.name | uppercase }}</div>
+      <div class="experience">Base experience: <span>{{pokemon.experience}}</span></div>
+      <div class="ability">
+        <div>Abilities:</div>
+        <div *ngFor="let i of pokemon.abilities">- {{i.ability.name | uppercase }}</div>
+      </div>
+    </div>
+  </div>
